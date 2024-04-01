@@ -1,0 +1,2 @@
+class Photocards
+  def __init__(self,photocards,nome)
