@@ -1,1 +1,18 @@
 
+
+class PessoaFisica:
+    def __init__ (self, cpf: int):
+        if isinstance (cpf, int):
+            self.__cpf = cpf
+
+
+    @property
+    def cpf (self) -> int:
+        return self.__cpf
+    
+
+    @cpf.setter
+    def cpf (self, cpf, int):
+        if isinstance (cpf,int):
+            self.__cpf = cpf
+
