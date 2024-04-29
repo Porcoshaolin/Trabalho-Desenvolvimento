@@ -1,1 +1,16 @@
 
+
+Class PessoaJuridica:
+    def __init__ (cnpj: int):
+        if isinstance (cnpj, int):
+            self.__cnpj = cnpj
+
+
+    @property
+    def cnpj(self) -> int:
+      return self.__cnpj
+
+    @cnpj.setter
+    def cnpj(self, cnpj, int):
+        if isinstance(cnpj, int):
+            self.__cnpj = cnpj
