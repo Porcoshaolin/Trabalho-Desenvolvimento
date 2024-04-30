@@ -1,9 +1,11 @@
+from pessoa import Pessoa
 
 
-class PessoaFisica:
-    def __init__ (self, cpf: int):
+class PessoaFisica(Pessoa):
+    def __init__ (self, cpf: int, nome: str):
         if isinstance (cpf, int):
             self.__cpf = cpf
+        super().__init__(nome)
 
 
     @property
@@ -15,4 +17,5 @@ class PessoaFisica:
     def cpf (self, cpf, int):
         if isinstance (cpf,int):
             self.__cpf = cpf
+
 
