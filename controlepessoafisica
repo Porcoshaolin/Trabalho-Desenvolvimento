@@ -1,0 +1,13 @@
+from pessoa_fisica import PessoaFisica
+
+
+class ControladorPessoaFisica:
+    def __init__ (self):
+        self.__pessoas_fisicas = []
+        self.__tela_pessoafisica = TelaPessoaFisica()
+
+
+    def adiciona_pessoa_fisica(self):
+        dados_pessoa_fisica = self.__tela_pessoafisica.cadastrar_pessoa_fisica
+        pessoa_fisica = PessoaFisica(dados_pessoa_fisica["cpf"], dados_pessoa_fisica ["nome"])
+        self.__pessoas_fisicas.append(pessoa_fisica)
