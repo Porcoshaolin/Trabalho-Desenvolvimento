@@ -1,0 +1,9 @@
+
+
+class TelaPessoaFisica:
+    
+    def cadastra_pessoa_fisica(self):
+        nome = input("Nome: ")
+        cpf = input("CPF: ")
+    
+        return {"nome": nome, "cpf": int(cpf)}
