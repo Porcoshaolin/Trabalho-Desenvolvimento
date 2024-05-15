@@ -1,21 +1,16 @@
 from pessoa import Pessoa
 
 
-class PessoaFisica(Pessoa):
-    def __init__ (self, cpf: int, nome: str):
-        if isinstance (cpf, int):
+class PessoaFisica:
+    def __init__(self, cpf: int):
+        if isinstance(cpf, int):
             self.__cpf = cpf
-        super().__init__(nome)
-
 
     @property
-    def cpf (self) -> int:
+    def cpf(self) -> int:
         return self.__cpf
-    
 
     @cpf.setter
-    def cpf (self, cpf, int):
-        if isinstance (cpf,int):
+    def cpf(self, cpf):
+        if isinstance(cpf, int):
             self.__cpf = cpf
-
-
