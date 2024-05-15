@@ -1,11 +1,12 @@
 from tela_orcamento import TelaOrcamento
+from orcamento import Orcamento
 
 
 class ControladorOrcamento:
     def __init__(self, tela: TelaOrcamento):
         if isinstance(tela, TelaOrcamento):
             self.__tela = tela
-    self.__orcamnentos = []
+    self.__orcamentos = []
 
     def adiciona_orcamento(self):
 
