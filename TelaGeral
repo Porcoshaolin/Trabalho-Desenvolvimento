@@ -1,1 +1,9 @@
 
+
+class TelaGeral:
+    def __init__(self):
+
+    def tela_opcoes(self):
+
+
+    def le_num_inteiro(self):
