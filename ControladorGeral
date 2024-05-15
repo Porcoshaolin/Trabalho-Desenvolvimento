@@ -4,6 +4,7 @@ from controlador_orcamento import ControladorOrcamento
 from controlador_usuario import ControladorUsuario
 from controlador_pessoa_fisica import PessoaFisica
 from controlador_movimentacao import ControladorMovimentacao
+from tela_geral import TelaGeral
 
 class ControladorGeral:
     def __init__(self):
@@ -13,7 +14,7 @@ class ControladorGeral:
         self.__controlador_orcamento = ControladorOrcamento(self)
         self.__controlador_usuario = ControladorUsuario(self)
         self.__controlador_movimentacao = ControladorMovimentacao(self)
-        self.__tela_sistema = TelaSistema()
+        self.__tela_geral = TelaGeral()
 
     def controlador_tipo_orcamento(self):
         return self.__controlador_tipo_orcamento
@@ -35,3 +36,31 @@ class ControladorGeral:
 
     def inicializa_sistema(self):
         self.abre_tela()
+
+    def cadastra_tipo_orcamento(self):
+        self.__controlador_tipo_orcamento.abre_tela
+
+    def cadastra_pessoas_juridicas(self):
+        self.__controlador_pessoas_juridicas.abre_tela()
+
+    def cadastra_orcamentos(self):
+        self.__controlador_orcamentos.abre_tela()
+
+    def cadastra_pessoas_fisicas(self):
+        self.__controlador_pessoas_fisicas.abre_tela()
+
+    def cadastra_movimentacoes(self):
+        self.__controlador_movimentacoes.abre_tela()
+
+    def encerra_sistema(self):
+        exit(0)
+
+    def abre_tela(self)
+        lista_opcoes = {1: self.__cadastra_tipo_orcamento, 2: self.__cadastra_pessoas_fisicas, 3: self.__cadastra_pessoas_juridicas, 4: self.__cadastra_orcamentos, 5: self.__cadastra_movimentacoes, 0: self.encerra_sistema}
+
+        while True:
+            opcao_escolhida = self.__tela_geral.tela_opcoes()
+            funcao_escolhida = lista_opcoes[opcao_escolhida]
+            funcao_escolhida()
+
+
