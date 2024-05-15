@@ -1,1 +1,26 @@
+from movimentacao import Movimentacao
+from tela_movimentacao import TelaMovimentacao
 
+class ControladorMovimentacao:
+    def __init__(self, tela_movimentacao: TelaMovimentacao):
+        if isinstance(tela_movimentacao, TelaMovimentacao):
+            self.__tela_movimentacao = tela_movimentacao
+
+    self.__movimentacoes = []
+
+    def adiciona_movimentacao(self):
+
+
+    def exclui_movimentacao(self):
+
+
+    def altera_movimentacao(self):
+
+
+    def acha_movimentacao(self):
+
+
+    def lista_movimentacoes(self):
+
+
+    def calcula_saldo(self):
