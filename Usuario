@@ -1,16 +1,15 @@
 
 
-Class Usuario:
-  def __init__(senha: str,):
-      if isinstance(senha,str):
-          self.__senha = senha
+class Usuario:
+    def __init__(self, senha: str):
+        if isinstance(senha, str):
+            self.__senha = senha
 
-@property
-def senha(self) -> str:
-    return self.__senha
+    @property
+    def senha(self) -> str:
+        return self.__senha
 
-@senha.setter
-def senha(self, senha):
-    if isinstance (senha, str):
-        self.__senha = senha
-    
+    @senha.setter
+    def senha(self, senha):
+        if isinstance(senha, str):
+            self.__senha = senha
