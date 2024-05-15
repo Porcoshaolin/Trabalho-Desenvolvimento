@@ -1,0 +1,16 @@
+
+
+class TelaOrcamento:
+      def __init__(self):
+
+
+      def pega_dado_orcamento(self):
+
+
+      def mostra_orcamentos(self):
+
+
+      def mostra_comparacao(self):
+
+
+      def seleciona_categoria(self):
