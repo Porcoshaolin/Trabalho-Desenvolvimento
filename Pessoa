@@ -1,1 +1,15 @@
+import abc from ABC, abstractmethod
 
+class Pessoa(ABC):
+    def __init__(self, nome: str):
+        if isinstance(nome, str):
+            self.__nome = nome
+
+    @property
+    def nome(self) -> str:
+        return self.__nome
+
+    @nome.setter
+    def nome(self, nome):
+        if isinstance(nome, str):
+            self.__nome = nome
