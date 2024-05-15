@@ -1,0 +1,28 @@
+from telapessoajuridica import TelaPessoaJuridica
+
+class ControladorPessoaJuridica:
+    def __init__(self, tela: TelaPessoaJuridica):
+        if isinstance(tela, TelaPessoaJuridica):
+            self.__tela = tela
+        self.__pessoas_juridicas = []
+
+
+    def adiciona_pessoa_juridica:
+
+
+
+    def exclui_pessoa_juridica(self, cnpj: int):
+        for a in self.__pessoas_juridicas:
+            if a == cnpj and not None:
+                self.__pessoas_juridicas.remove(cnpj)
+
+
+    def altera_pessoa_juridica:
+
+
+
+    def acha_pessoa_juridica:
+
+
+
+    def lista_pessoa_juridicas:
