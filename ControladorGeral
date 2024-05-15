@@ -1,1 +1,37 @@
+from controlador_tipo_orcamento import TipoOrcamento
+from controlador_pessoa_juridica import PessoaJuridica
+from controlador_orcamento import ControladorOrcamento
+from controlador_usuario import ControladorUsuario
+from controlador_pessoa_fisica import PessoaFisica
+from controlador_movimentacao import ControladorMovimentacao
 
+class ControladorGeral:
+    def __init__(self):
+        self.__controlador_tipo_orcamento = ControladorTipoOrcamento(self)
+        self.__controlador_pessoa_juridica = PessoaJuridica(self)
+        self.__controlador_pessoa_fisica = PessoaFisica(self)
+        self.__controlador_orcamento = ControladorOrcamento(self)
+        self.__controlador_usuario = ControladorUsuario(self)
+        self.__controlador_movimentacao = ControladorMovimentacao(self)
+        self.__tela_sistema = TelaSistema()
+
+    def controlador_tipo_orcamento(self):
+        return self.__controlador_tipo_orcamento
+
+    def controlador_pessoa_juridica(self):
+        return self.__controlador_pessoa_juridica
+
+    def controlador_pessoa_fisica(self):
+        return self.__controlador_pessoa_fisica
+
+    def controlador_orcamento(self):
+        return self.__controlador_orcamento
+
+    def controlador_usuario(self):
+        return self.__controlador_usuario
+
+    def controlador_movimentacao(self):
+        return self.__controlador_movimentacao
+
+    def inicializa_sistema(self):
+        self.abre_tela()
