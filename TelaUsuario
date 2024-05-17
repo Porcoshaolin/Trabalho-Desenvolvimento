@@ -5,11 +5,13 @@ class TelaUsuario:
 
 
     def pega_dado_usuario:
-
-
-
+    print (".......DADOS USUARIO.......")
+    nome: input ("NOME :")
+    cpf: input("CPF: ")
 
     def seleciona_usuario:
+    
+    
 
 
 
