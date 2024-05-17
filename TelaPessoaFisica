@@ -4,7 +4,8 @@ class TelaPessoaFisica:
     def __init__(self):
 
 
-    def peda_dado_pessoa_fisica(self):
+    def peda_dado_pessoa_fisica(self, nome, cpf):
+        if isinstance (nome, str) and (cpf, int):
         nome = input ("Nome: ")
         cpf = input ("CPF: ")
         
