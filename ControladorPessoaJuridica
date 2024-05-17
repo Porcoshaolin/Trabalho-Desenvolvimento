@@ -15,14 +15,11 @@ class ControladorPessoaJuridica:
                     
         
 
+    def lista_pessoas_juridicas(self)
+    self.__tela_pessoa_juridica
 
-
-    def exclui_pessoa_juridica(self, cnpj: int):
-        if isinstance(cnpj, int):
-            for a in self.__pessoas_juridicas:
-                if a == cnpj and not None:
-                    self.__pessoas_juridicas.remove(cnpj)
-
+    def exclui_pessoa_juridica(self):
+       self.tela
 
     def altera_pessoa_juridica:
 
