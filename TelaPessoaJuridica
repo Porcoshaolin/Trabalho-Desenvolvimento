@@ -1,1 +1,13 @@
 
+
+class TelaPessoaJuridica:
+    def __init__(self):
+
+
+    def peda_dado_pessoa_juridica(self, nome, cnpj):
+        if isinstance (nome, str) and (cnpj, int):
+        nome = input ("Nome: ")
+        cnpj = input ("CNPJ: ")
+        
+        return {"nome": (nome), "CNPJ": int(CNPJ)}
+
