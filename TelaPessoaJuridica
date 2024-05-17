@@ -3,6 +3,11 @@
 class TelaPessoaJuridica:
     def __init__(self):
 
+    def mostra_pessoa_juridica(self)
+    print(----Pessoa Juridica----)
+    print("NOME PESSOA JURIDICA: ", 
+    
+
 
     def peda_dado_pessoa_juridica(self, nome, cnpj):
         if isinstance (nome, str) and (cnpj, int):
