@@ -4,13 +4,17 @@ class ControladorUsuario:
     def __init__(self, tela: TelaUsuario):
         if isinstance(tela, TelaUsuario):
             self.__tela = tela
-        self.usuarios: []
+        self.__usuarios: []
 
     def adiciona_usuario:
 
 
 
     def exclui_usuario:
+    user: self.__tela_amigo
+    for user in self.__usuarios
+        if user == self.__usuarios
+        
 
 
 
