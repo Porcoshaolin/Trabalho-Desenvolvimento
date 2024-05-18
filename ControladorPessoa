@@ -1,0 +1,46 @@
+from telapessoa import TelaPessoa
+
+class ControladorPessoaJuridica:
+    def __init__(self, tela: TelaPessoa):
+        if isinstance(tela, TelaPessoa):
+            self.__tela = tela
+        self.__pessoas = []
+
+
+    def lista_pessoas_juridicas(self):
+        self.__tela_pessoa_.mostra_pessoas({"nome: " pessoa_juridica.nome, "cnpj: " pessoa_juridica.cnpj})
+
+
+    def adiciona_pessoa_juridica(self, nome, str):
+        if isinstance(cnpj, int):
+        nome_pessoa = self.__tela_pessoa_juridica.seleciona_amigo()
+        pessoa_juridica = self.pega_dado_pessoa_por_nome(nome_pessoa)
+
+        if (nome_pessoa is None):
+            self.__pessoas.append(pessoa)
+            self.lista_pessoas()
+        else:
+            self.__tela_pessoa_.mostra_mensagem("ATENCAO: Esta pessoa não existe!")
+
+
+    def exclui_pessoa(self):
+       if isinstance(nome):
+        nome_pessoa = self.__tela_pessoa.seleciona_pessoa()
+        pessoa_juridica = self.pega_dado_pessoa_juridica_por_nome(nome_pessoa)
+
+        if (pessoa_juridica is not None):
+            self.__pessoas_juridicas.remove(pessoa_juridica)
+            self.lista_pessoas_juridicas()
+        else:
+            self.__tela_pessoa_.mostra_mensagem("ATENCAO: pessoa juridica já existe!")
+
+
+    def altera_pessoa:
+    
+
+
+    def acha_pessoa:
+
+
+
+    def lista_pessoa:
