@@ -8,6 +8,23 @@ class ControladorPessoaFisica:
 
 
     def adiciona_pessoa_fisica(self):
-        dados_pessoa_fisica = self.__tela_pessoafisica.cadastrar_pessoa_fisica
-        pessoa_fisica = PessoaFisica(dados_pessoa_fisica["cpf"], dados_pessoa_fisica ["nome"])
-        self.__pessoas_fisicas.append(pessoa_fisica)
+        if isinstance(cpf, int):
+        cpf_pessoa_f = self.__tela_pessoa_fisica.seleciona_amigo()
+        pessoa_fisica = self.pega_dado_pessoa_fisica_por_cpf(cpf_pessoa_f)
+
+        if (pessoa_juridica is None):
+            self.__pessoas_fisica.remove(pessoa_fisica)
+            self.lista_pessoas_j()
+        else:
+            self.__tela_pessoa_juridica_.mostra_mensagem("ATENCAO: pessoa juridica já existe!")
+
+    def exclui_pessoa_fisica(self):
+    if isinstance(cnpj, int):
+        cnpj_pessoa_j = self.__tela_pessoa_juridica.seleciona_amigo()
+        pessoa_juridica = self.pega_dado_pessoa_juridica_por_cnpj(cnpj_pessoa_j)
+
+        if (pessoa_juridica is not None):
+            self.__pessoas_jfisica.remove(pessoa_juridica)
+            self.lista_pessoas_fisica()
+        else:
+            self.__tela_pessoa_uridica_.mostra_mensagem("ATENCAO: pessoa não existe!")
