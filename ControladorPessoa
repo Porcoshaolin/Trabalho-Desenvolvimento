@@ -1,4 +1,4 @@
-from telapessoa import TelaPessoa
+from tela_pessoa import TelaPessoa
 
 class ControladorPessoaJuridica:
     def __init__(self, tela: TelaPessoa):
@@ -12,8 +12,8 @@ class ControladorPessoaJuridica:
 
 
     def adiciona_pessoa_juridica(self, nome, str):
-        if isinstance(cnpj, int):
-        nome_pessoa = self.__tela_pessoa_juridica.seleciona_amigo()
+        if isinstance(nome, str):
+        nome_pessoa = self.__tela_pessoa.seleciona_pessoa()
         pessoa = self.pega_dado_pessoa_por_nome(nome_pessoa)
 
         if (nome_pessoa is None):
