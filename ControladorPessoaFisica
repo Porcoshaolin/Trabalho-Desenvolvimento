@@ -14,17 +14,17 @@ class ControladorPessoaFisica:
 
         if (pessoa_juridica is None):
             self.__pessoas_fisica.remove(pessoa_fisica)
-            self.lista_pessoas_j()
+            self.lista_pessoas_f()
         else:
-            self.__tela_pessoa_juridica_.mostra_mensagem("ATENCAO: pessoa juridica já existe!")
+            self.__tela_pessoa_fisica_.mostra_mensagem("ATENCAO: pessoa juridica já existe!")
 
     def exclui_pessoa_fisica(self):
-    if isinstance(cnpj, int):
+    if isinstance(cpf, int):
         cnpj_pessoa_j = self.__tela_pessoa_juridica.seleciona_amigo()
         pessoa_juridica = self.pega_dado_pessoa_juridica_por_cnpj(cnpj_pessoa_j)
 
-        if (pessoa_juridica is not None):
-            self.__pessoas_jfisica.remove(pessoa_juridica)
+        if (pessoa_fisica is not None):
+            self.__pessoas_fisica.remove(pessoa_fisica)
             self.lista_pessoas_fisica()
         else:
-            self.__tela_pessoa_uridica_.mostra_mensagem("ATENCAO: pessoa não existe!")
+            self.__tela_pessoa_fisica_.mostra_mensagem("ATENCAO: pessoa não existe!")
