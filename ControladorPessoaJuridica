@@ -6,8 +6,10 @@ class ControladorPessoaJuridica:
             self.__tela = tela
         self.__pessoas_juridicas = []
 
+
     def lista_pessoas_juridicas(self):
-        self.__tela_pessoa_fisica.mostra_pessoas_fisicas({"nome: " pessoa_fisica.nome, "cpf: " pessoa_fisica.cpf})
+        self.__tela_pessoa_fisica.mostra_pessoas_fisicas({"nome: " pessoa_juridica.nome, "cnpj: " pessoa_juridica.cnpj})
+
 
     def adiciona_pessoa_juridica(self, cnpj: int):
         if isinstance(cnpj, int):
@@ -19,12 +21,7 @@ class ControladorPessoaJuridica:
             self.lista_pessoas_juridicas()
         else:
             self.__tela_pessoa_juridica_.mostra_mensagem("ATENCAO: pessoa juridica não existe!")
-        
-                    
-        
 
-    def lista_pessoas_juridicas(self)
-    self.__tela_pessoa_juridica.seleciona_pessoa_juridica
 
     def exclui_pessoa_juridica(self):
        if isinstance(cnpj, int):
@@ -37,8 +34,9 @@ class ControladorPessoaJuridica:
         else:
             self.__tela_pessoa_juridica_.mostra_mensagem("ATENCAO: pessoa juridica já existe!")
 
-    def altera_pessoa_juridica:
 
+    def altera_pessoa_juridica:
+    
 
 
     def acha_pessoa_juridica:
