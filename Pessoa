@@ -1,6 +1,5 @@
-import abc from ABC, abstractmethod
 
-class Pessoa(ABC):
+class Pessoa:
     def __init__(self, nome: str):
         if isinstance(nome, str):
             self.__nome = nome
