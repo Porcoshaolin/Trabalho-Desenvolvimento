@@ -1,7 +1,0 @@
-
-
-class TelaTipoOrcamento:
-      def __init__(self):
-
-
-      def pega_dado_orcamento(self):
