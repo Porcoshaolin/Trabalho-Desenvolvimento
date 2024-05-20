@@ -1,7 +1,8 @@
 
 
 class Usuario:
-    def __init__(self, senha: str):
+    def __init__(self, nome: strsenha: str):
+        super().__init__(nome)
         if isinstance(senha, str):
             self.__senha = senha
 
