@@ -60,4 +60,5 @@ class ControladorGeral:
         while True:
             opcao_escolhida = self.__tela_geral.tela_opcoes()
             funcao_escolhida = lista_opcoes[opcao_escolhida]
-            funcao_escolhida()
+            funcao_escolhida() 
+            a
