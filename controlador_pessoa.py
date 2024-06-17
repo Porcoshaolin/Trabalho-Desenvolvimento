@@ -1,24 +1,25 @@
 from tela_pessoa import TelaPessoa
 from pessoa import Pessoa
 from controlador_geral import ControladorGeral
+from pessoa_dao import PessoaDAO
 
 
 class ControladorPessoa:
 
     def __init__(self, controlador_geral):
-        self.__pessoas = []
+        self.__pessoa_dao = PessoaDAO
         if isinstance(controlador_geral, ControladorGeral):
             self.__controlador_geral = controlador_geral
         self.__tela_pessoa = TelaPessoa()
 
     def achar_pessoa(self, nome: str):
-        for pessoa in self.__pessoas:
+        for pessoa in self.__pessoa_dao_get_all:
             if(nome is not None and pessoa.nome == nome):
                 return pessoa
         return None
 
     def listar_pessoa(self):
-        for pessoa in self.__pessoas:
+        for pessoa in self.__pessoa_dao_get_all:
             self.__tela_pessoa.mostrar_pessoa({"nome": pessoa.nome})
 
     def adicionar_pessoa(self):
@@ -26,7 +27,7 @@ class ControladorPessoa:
         p = self.achar_pessoa(dados_pessoa["nome"])
         if p is None:
             pessoa = Pessoa(dados_pessoa["nome"])
-            self.__pessoas.append(pessoa)
+            self.__pessoa_dao.add(pessoa)
             self.__tela_pessoa.mostrar_mensagem("Pessoa adicionada com sucesso.")
         else:
             self.__tela_pessoa.mostrar_mensagem("Não é possível adicionar uma pessoa já cadastrada.")
@@ -35,7 +36,7 @@ class ControladorPessoa:
         p = self.achar_pessoa(nome)
         if p is None:
             pessoa = Pessoa(nome)
-            self.__pessoas.append(pessoa)
+            self.__pessoa_dao.add(pessoa)
             return pessoa
         return p
 
@@ -45,7 +46,7 @@ class ControladorPessoa:
         pessoa = self.achar_pessoa(p)
 
         if pessoa is not None:
-            self.__pessoas.remove(pessoa)
+            self.__pessoa_dao.remove(pessoa)
             self.__tela_pessoa.mostrar_mensagem("'Pessoa' excluída com sucesso.")
             self.listar_pessoa()
         else:
