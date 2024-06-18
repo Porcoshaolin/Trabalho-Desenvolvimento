@@ -1,5 +1,5 @@
-from dao import DAO
-from usuario import Usuario
+from persistencia.dao import DAO
+from entidade.usuario import Usuario
 
 class UsuarioDAO:
 
