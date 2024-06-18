@@ -1,19 +1,20 @@
 from limite.tela_usuario import TelaUsuario
 from entidade.usuario import Usuario
 from controle.controlador_geral import ControladorGeral
+from usuario_dao import UsuarioDao
 
 
 class ControladorUsuario:
 
     def __init__(self, controlador_geral):
-        self.__usuarios = []
+        self.__pessoa_dao = UsuarioDAO
         if isinstance(controlador_geral, ControladorGeral):
             self.__controlador_geral = controlador_geral
         self.__tela_usuario = TelaUsuario()
 
     def achar_usuario(self, nome: str):
         if isinstance(nome, str):
-            for usuario in self.__usuarios:
+            for usuario in self.__usuario_dao_get_all:
                 if usuario.nome == nome:
                     return usuario
             return None
@@ -23,7 +24,7 @@ class ControladorUsuario:
         u = self.achar_usuario(dados_usuario["nome"])
         if u is None:
             usuario = Usuario(dados_usuario["nome"], dados_usuario["senha"])
-            self.__usuarios.append(usuario)
+            self.__usuario.append(usuario)
             self.__tela_usuario.mostrar_mensagem("Cadastro realizado com sucesso!")
             self.login()
         else:
