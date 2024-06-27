@@ -12,14 +12,16 @@ class TelaTipoOrcamento(Tela):
         button, values = self.open()
         if button == '1':
             opcao = 1
-        if button == '2':
+        elif button == '2':
             opcao = 2
-        if button == '3':
+        elif button == '3':
             opcao = 3
-        if button == '4':
+        elif button == '4':
             opcao = 4
-        if button == '5':
+        elif button == '5':
             opcao = 5
+        else:
+            opcao = None
 
         self.close()
         return opcao
@@ -28,24 +30,24 @@ class TelaTipoOrcamento(Tela):
 
         sg.ChangeLookAndFeel('DarkGray16')
         layout = [
-                    [sg.Text('CATEGORIAS DE ORÇAMENTO', font=('Century Gothic', 25))],
-                    [sg.Text("Escolha uma das opções abaixo:", font=("Open Sans",15), size=(30,1))],
-                    [sg.Button("Listar categorias", font=("Open Sans",15), size=(30,1), key='1')],
-                    [sg.Button("Adicionar categoria", font=("Open Sans",15), size=(30,1), key='2')],
-                    [sg.Button("Alterar categoria", font=("Open Sans",15), size=(30,1), key='3')],
-                    [sg.Button("Excluir categoria", font=("Open Sans",15), size=(30,1), key='4')],
-                    [sg.Button("Retornar", font=("Open Sans",15), size=(30,1), key='5')]
+            [sg.Text('CATEGORIAS DE ORÇAMENTO', font=('Century Gothic', 25))],
+            [sg.Text("Escolha uma das opções abaixo:", font=("Open Sans", 15), size=(30, 1))],
+            [sg.Button("Listar categorias", font=("Open Sans", 15), size=(30, 1), key='1')],
+            [sg.Button("Adicionar categoria", font=("Open Sans", 15), size=(30, 1), key='2')],
+            [sg.Button("Alterar categoria", font=("Open Sans", 15), size=(30, 1), key='3')],
+            [sg.Button("Excluir categoria", font=("Open Sans", 15), size=(30, 1), key='4')],
+            [sg.Button("Retornar", font=("Open Sans", 15), size=(30, 1), key='5')]
         ]
 
         self.__window = sg.Window('Categorias orçamentárias', element_justification='c').Layout(layout)
 
-    def pegar_tipo(self):
+    def pegar_tipo(self, nome_categoria=''):
 
         sg.ChangeLookAndFeel('DarkGray16')
         layout = [
-                    [sg.Text('Categorias', font=("Helvica", 25))],
-                    [sg.Text('Nome da categoria:', size=(15,1)), sg.InputText('', key='categoria')],
-                    [sg.Button('Confirmar'), sg.Cancel('Cancelar')]
+            [sg.Text('Insira o novo nome da categoria', font=("Open Sans", 12))],
+            [sg.InputText(nome_categoria, key='categoria')],
+            [sg.Button('Confirmar'), sg.Cancel('Cancelar')]
         ]
 
         self.__window = sg.Window('Categorias orçamentárias', element_justification='c').Layout(layout)
@@ -55,27 +57,47 @@ class TelaTipoOrcamento(Tela):
         if button == 'Cancelar':
             self.close()
             self.tela_opcoes()
+            return None
 
         categoria = values['categoria']
-        if isinstance(categoria, str) and categoria is not None:
+        if isinstance(categoria, str) and categoria:
             self.close()
             return {"categoria": categoria}
 
     def mostrar_tipo(self, dados_tipo):
-        string_todos_tipos = ''
-        for dado in dados_tipo:
-            string_todos_tipos = string_todos_tipos + "NOME DA CATEGORIA: " + dado["categoria"] + '\n'
+        categorias = [dado["categoria"] for dado in dados_tipo]
+        data = [[categoria] for categoria in categorias]
 
-        sg.Popup('LISTA DE AMIGOS', string_todos_tipos)
+        layout = [
+            [sg.Text('Categorias cadastradas no sistema:', font=("Open Sans", 12))],
+            [sg.Table(values=data, headings=['Categorias'], auto_size_columns=True,
+                      display_row_numbers=False, justification='center',
+                      num_rows=min(25, len(data)), key='-TABLE-')],
+            [sg.Button('Confirmar')]
+        ]
 
-    def selecionar_categoria(self):
+        self.__window = sg.Window('Categorias Cadastradas', layout, element_justification='c')
+
+        while True:
+            event, values = self.__window.read()
+            if event == sg.WIN_CLOSED or event == 'Confirmar':
+                break
+
+        self.__window.close()
+
+    def selecionar_categoria(self, dados_tipos):
 
         sg.ChangeLookAndFeel('DarkGray16')
+
+        categorias = [dado["categoria"] for dado in dados_tipos]
+        data = [[categoria] for categoria in categorias]
+
         layout = [
-                    [sg.Text('Selecionar Categoria', font=("Century Gothic", 25))],
-                    [sg.Text('Selecione o nome da categoria:', font=("Helvica", 15))],
-                    [sg.Text('Nome da categoria:', size=(15, 1)), sg.InputText('', key='categoria')],
-                    [sg.Button('Confirmar'), sg.Cancel('Cancelar')]
+            [sg.Text('Selecione a categoria que deseja alterar/excluir:', font=("Open Sans", 15))],
+            [sg.Table(values=data, headings=['Categorias'], auto_size_columns=True,
+                      display_row_numbers=False, justification='center',
+                      num_rows=min(25, len(data)), key='TABLE', enable_events=True)],
+            [sg.Cancel('Cancelar')]
         ]
 
         self.__window = sg.Window('Selecionar categoria', element_justification='c').Layout(layout)
@@ -85,8 +107,14 @@ class TelaTipoOrcamento(Tela):
         if button == 'Cancelar':
             self.close()
             self.tela_opcoes()
+            return None
 
-        categoria = values['categoria']
+        selected_row_index = values['TABLE']
+        if selected_row_index:
+            categoria = data[selected_row_index[0]][0]
+        else:
+            categoria = None
+
         self.close()
         return categoria
 
@@ -96,17 +124,5 @@ class TelaTipoOrcamento(Tela):
     def open(self):
         button, values = self.__window.Read()
         return button, values
-
-
-
-
-
-
-
-
-
-
-
-
 
 
