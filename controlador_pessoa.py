@@ -19,12 +19,17 @@ class ControladorPessoa:
         return None
 
     def listar_pessoa(self):
-        for pessoa in self.__pessoa_dao_get_all:
-            self.__tela_pessoa.mostrar_pessoa({"nome": pessoa.nome})
+        dados_pessoas = self.listar_todas_pessoas()
+        self.__tela_pessoa.mostrar_pessoa(dados_pessoas)
+
+    def listar_todas_pessoas(self):
+        return [{"nome": pessoa.nome} for pessoa in self.__pessoa_dao.get_all()]
 
     def adicionar_pessoa(self):
         dados_pessoa = self.__tela_pessoa.pegar_pessoa()
         p = self.achar_pessoa(dados_pessoa["nome"])
+
+
         if p is None:
             pessoa = Pessoa(dados_pessoa["nome"])
             self.__pessoa_dao.add(pessoa)
